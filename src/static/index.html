@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Warmup Service</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Email Warmup Service</h1>
+        
+        <div class="card">
+            <h2>Link Email Account</h2>
+            <div class="provider-buttons">
+                <button type="button" onclick="linkAccount('gmail')" class="gmail-btn">
+                    Link Gmail Account
+                </button>
+                <button type="button" onclick="linkAccount('outlook')" class="outlook-btn">
+                    Link Outlook Account
+                </button>
+            </div>
+            <div id="linkStatus"></div>
+        </div>
+        
+        <div class="card">
+            <h2>Send Email</h2>
+            <form id="emailForm" onsubmit="sendEmail(event)">
+                <div class="form-group">
+                    <label for="provider">From Account:</label>
+                    <select id="provider" required>
+                        <option value="">Select Provider</option>
+                        <option value="gmail">Gmail</option>
+                        <option value="outlook">Outlook</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="toAddress">To:</label>
+                    <input type="email" id="toAddress" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="body">Message:</label>
+                    <textarea id="body" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit">Send Email</button>
+            </form>
+            <div id="status"></div>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
